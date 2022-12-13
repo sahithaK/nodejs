@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  #items {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width:100%
+
+}
+#items tr:nth-child(even){background-color: #f2f2f2;}
+#items th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: gray;
+  color: white;
+}
+#items tr:hover {background-color: #ddd;}
+#button {
+    background-color: teal;
+    float:left;
+    color: white;
+    cursor: pointer;
+}
+</style>
+<body>
+    <h1>Welcome ,<%= locals.username %></h1>
+            <table id="items">
+                <tr>
+                    <th>Id</th>
+                    <th>owner</th>
+                    <th>Thoughts</th>
+                  </tr>
+                <% for(var i=0; i < thoughtsexsisting.length; i++) { %>
+                   <tr>
+                     <td><%= i+1 %></td>
+                     <td><%= thoughtsexsisting[i].owner %></td>
+                     <td><%= thoughtsexsisting[i].thoughts %></td>
+                   </tr>
+                <% } %>
+        </table>
+<br><br>
+ 
+       
+</body>
+</html>
